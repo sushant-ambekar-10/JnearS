@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+        body{
+            /* background-color: rgb(0, 53, 106); */
+            background-image: url(img/images/bak.jpg);
+            background-size: cover;
+        }
+        .form{
+            border: 2px solid rgb(0, 51, 102);
+            border-radius: 25px;
+            width: 700px;
+            height: 600px;
+            display: block;
+            margin: 200px auto;
+            text-align: center;
+            background-color: white;
+            opacity: 0.7;
+        }
+        .form:hover{
+            background-image: url('img/images/user.png');
+            background-size: cover;
+            cursor: pointer;
+            box-shadow: 7px 7px 7px black;
+            margin-bottom: -7px;
+        }
+        .data{
+            color: black;
+            padding: 7px 20px;
+            /* justify-content: center; */
+            width: 150px;
+            height: 100px;
+            /* margin: auto; */
+            margin-left: 195px;
+            /* margin-top: 150px; */
+            font-size: 25px;
+            opacity: 1.0;
+        }
+        .data input{
+            width: 250px;
+            height: 30px;
+            opacity: 1.0;
+        }
+        .btn{
+            font-size: 20px;
+            width: 150px;
+            height: 35px;
+            /* margin: 25px auto; */
+            margin-left: 50px;
+            border: 2px solid black;
+            border-radius: 5px ;
+            background-color: rgb(28, 59, 95);
+            color: azure;
+            opacity: 1.0;
+        }
+        h1{
+            margin-top: 150px;
+            font-size: 40px;
+            color:rgb(0, 20, 88);
+        }
+    </style>
+</head>
+<body>
+    <section class="log">
+        <div class="logcontainer">
+            <center>
+                
+                <form action="login.php" method="GET" class="form" >
+                    <h1>LOGIN</h1>
+                    <img src="" alt="">
+                    <div class="data">
+                        <input type="number" id="ri" name="ri" placeholder="Registered ID" name="ri"><br><br>
+                        <input type="password" id="em" name="em" placeholder="Password" name="em"><br><br>
+                    <button class="btn">Submit<button>
+                   </div>
+                </form>
+            </center>
+        </div>
+    </section>
+</body>
+</html>

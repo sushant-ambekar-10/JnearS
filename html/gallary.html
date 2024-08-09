@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallary</title>
+
+    <style>
+        body{
+            background-color: rgb(0, 153, 204);
+            animation: animate 15s ease-in-out infinite;
+        }
+        @keyframes animate{
+            0%,100%{
+                background-color: aliceblue;
+            }
+            25%{
+                background-color: rgb(102, 255, 204);
+            }
+            50%{
+                background-color: rgb(255, 204, 153);
+            }
+            75%{
+                background-color: rgb(153, 153, 102);
+            }
+        }
+        .gallary{
+            width: 1200px;
+            display: flex;
+            overflow-x: scroll;
+        }
+        .gallary div{
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 20px;
+            padding: 10px;
+            flex: none;
+        }
+        .gallary div img{
+            width: 100%;
+            filter: grayscale(100);
+            transition: tranform(0.5s);
+        }
+        .gallary::-webkit-scrollbar{
+            display: none;
+        }
+        .gallary-wrap{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10% auto;
+        }
+        .back{
+            width: 40px;
+            cursor: pointer;
+            margin: 40px;
+        }
+        #next{
+            width: 40px;
+            cursor: pointer;
+            margin: 40px;
+        }
+        .gallary div img:hover{
+            filter: grayscale(0);
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        h1{
+            font-size: 100px;
+        }
+        .gallary img{
+            width: 250px;
+            height: 250px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Gallary</h1></center>
+    <div class="gallary-wrap">
+        <img src="/img/images/back.png" class="back" alt="">
+
+        <div class="gallary">
+            <div>
+                <span><img src="/img/images/gallary1.jpg" alt=""></span>
+                <span><img src="/img/images/gallary2.jpg" alt=""></span>
+                <span><img src="/img/images/gallary3.jpg" alt=""></span>
+            </div>
+    
+            <div>
+                <span><img src="/img/images/gallary4.jpg" alt=""></span>
+                <span><img src="/img/images/gallary5.jpg" alt=""></span>
+                <span><img src="/img/images/gallary6.jpg" alt=""></span>
+            </div>
+        </div>
+
+        <img src="/img/images/next.png" id="next" alt="">
+    </div>
+   <script>
+    let scrollContainer= document.querySelector(".gallary");
+    let back= document.getElementsByClassName("back");
+    let next = document.getElementById("next");
+
+    scrollContainer.addEventListener("wheel",(evt) =>{
+        evt.preventDefault();
+        scrollContainer.scrollLeft +=evt.deltaY;
+        scrollContainer.style.scrollBehavior="auto";
+    })
+
+    next.addEventListener("click",() => {
+        scrollContainer.style.scrollBehavior="smooth";
+        scrollContainer.scrollLeft +=900;
+    })
+
+    back.addEventListener("click",() => {
+        scrollContainer.style.scrollBehavior="smooth";
+        scrollContainer.scrollRight -=900;
+    })
+
+   </script>
+</body>
+</html>
